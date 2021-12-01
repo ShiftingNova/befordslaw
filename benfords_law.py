@@ -11,6 +11,8 @@ for i in file:
         numbers.append(float(e[1]))
 for i in numbers:
     value = int(str(i)[0])
+    if value == 0:
+        value = int(str(i)[1])
     if value not in amount:
         amount[value] = 1
     else:
