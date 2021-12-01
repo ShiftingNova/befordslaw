@@ -1,4 +1,4 @@
-file_name = str(input("Data file name:\n\n"))
+file_name = str(input("Data file name:\n"))
 file = open(file_name,'r')
 numbers = []
 amount = {}
@@ -15,12 +15,16 @@ for i in numbers:
         amount[value] = 1
     else:
         amount[value] = amount[value]+1
+print()
 for key in amount:
     count = int((amount[key]/len(numbers))*100)
     print(key,"|","#"*count)
 for key in amount:
-    if amount[key] > check[key]+10 or amount[key] < check[key]-5:
+    count = int((amount[key] / len(numbers)) * 100)
+    if count > check[key]+10 or count < check[key]-5:
         law = False
+        print(key,"false", amount[key])
+print(law)
 if law:
     print("\nFollows Benford's Law")
 else:
