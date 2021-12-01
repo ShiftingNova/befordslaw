@@ -26,7 +26,6 @@ for key in amount:
     if count > check[key]+10 or count < check[key]-5:
         law = False
         print(key,"false", amount[key])
-print(law)
 if law:
     print("\nFollows Benford's Law")
 else:
